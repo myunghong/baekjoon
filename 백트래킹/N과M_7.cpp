@@ -1,0 +1,33 @@
+#include<algorithm>
+#include<iostream>
+using namespace std;
+#define MAX 10
+int board[MAX];
+int ans[MAX];
+int max1,min1;
+void foo(int a){
+    if(a == min1+1){
+        for(int i = 1; i<a; i++){
+            cout << ans[i] << ' ';
+        }
+        cout << "\n";
+        return;
+    }
+    for(int i = 0; i<max1; i++){
+        ans[a] = board[i];
+        foo(a+1);
+    }
+    return;
+
+}
+int main(void){
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+    cin >> max1 >> min1;
+    for(int i = 0; i<max1; i++){
+        cin >> board[i];
+    }
+    sort(board,board+max1);
+    foo(1);
+    return 0;
+}
