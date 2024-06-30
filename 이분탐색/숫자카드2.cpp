@@ -52,3 +52,4 @@ int main(void){
 
     return 0;
 }
+//upper_bound와 lower_bound 함수를 사용하면 바로 풀 수 있는 문제였다....
